@@ -11,7 +11,7 @@ class Vehicle(ABC):
 
     @classmethod
     def vehicle_info(cls):
-        print("Vehicles are machines used for transportation.")
+        print("Vehicles are machines used for transportation.") #For using class methods
 
 # Inheritance: SchoolBus inherits from Vehicle
 class SchoolBus(Vehicle):
