@@ -6,15 +6,11 @@ class Vehicle(ABC):
         self._brand = brand  # Protected attribute (Encapsulation)
         self._wheels = wheels
 
-    @abstractmethod
-    def drive(self):  # Abstract method
-        pass
-
-    def get_brand(self):  # Instance method
+    def get_brand(self):
         return self._brand
 
     @classmethod
-    def vehicle_info(cls):  # Class method
+    def vehicle_info(cls):
         print("Vehicles are machines used for transportation.")
 
 # Inheritance: SchoolBus inherits from Vehicle
@@ -22,9 +18,6 @@ class SchoolBus(Vehicle):
     def __init__(self, brand, wheels, capacity):
         super().__init__(brand, wheels)
         self.__capacity = capacity  # Private attribute (Encapsulation)
-
-    def drive(self):
-        print(f"{self._brand} school bus is driving students to school.")
 
     def get_capacity(self):
         return self.__capacity
@@ -34,22 +27,15 @@ class SchoolBus(Vehicle):
 def main():
     bus = SchoolBus("Mercedes", 6, 50)
 
-    # Polymorphic behavior
-    bus.drive()
-
     # Encapsulation via getters
     print("Brand:", bus.get_brand())
     print("Capacity:", bus.get_capacity())
 
-    # Class method
+    # Calling Class Method
     Vehicle.vehicle_info()
 
-    # Static method
-    print("General Vehicle Usage:", Vehicle.general_usage())
-
     # Inheritance check
-    print("Is 'bus' an instance of Vehicle?", isinstance(bus, Vehicle))
-
+    print("Is 'bus' an instance of Vehicle?", isinstance(bus, Vehicle)) #Checks with built it function
 
 if __name__ == "__main__":
     main()
